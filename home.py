@@ -31,3 +31,15 @@ else:
 
 total_pay = (reg_hours * pay) + (late_hours * pay * 1.5) + (over_hours * pay * 2) + (weekend_hours * pay * 2) - breaks * (pay / 60)
 print('Total pay: $', total_pay)
+
+if total_pay > threshold:
+    print('You are over the tax threshold.')
+    taxable_income = total_pay - threshold
+    tax_rate = 0.19
+    tax_amount = taxable_income * tax_rate
+else:
+    print('You are under the tax threshold.')
+    tax_amount = 0
+
+net_pay = total_pay - tax_amount
+print('Net pay after tax: $', net_pay)
