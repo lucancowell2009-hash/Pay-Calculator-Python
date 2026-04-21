@@ -35,7 +35,7 @@ print('Total pay: $', total_pay)
 if total_pay > threshold:
     print('You are over the tax threshold.')
     taxable_income = total_pay - threshold
-    tax_rate = 0.19
+    tax_rate = 0.16
     tax_amount = taxable_income * tax_rate
 else:
     print('You are under the tax threshold.')
