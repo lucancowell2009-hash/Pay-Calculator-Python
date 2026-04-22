@@ -42,4 +42,4 @@ else:
     tax_amount = 0
 
 net_pay = total_pay - tax_amount
-print('Net pay after tax: $', net_pay)
+print(f'Net pay after tax: $', {net_pay})
