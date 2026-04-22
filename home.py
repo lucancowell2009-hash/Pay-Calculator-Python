@@ -30,7 +30,7 @@ else:
     weekend_hours = 0
 
 total_pay = (reg_hours * pay) + (late_hours * pay * 1.5) + (over_hours * pay * 2) + (weekend_hours * pay * 2) - breaks * (pay / 60)
-print('Total pay: $', total_pay)
+print(f'Total pay: $', {total_pay})
 
 if total_pay > threshold:
     print('You are over the tax threshold.')
