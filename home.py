@@ -1,10 +1,9 @@
-import csv
-import os
-from datetime import datetime
 
 reg_hours = float(input('Enter number of regular paid hours: '))
 pay = float(input('Enter hourly pay ($): '))
 breaks_check = input('Did you take any breaks? (y/n): ')
+
+threshold = 350
 
 if breaks_check.lower() == 'y':
     breaks = float(input('Enter time taken for breaks (minutes): '))
@@ -34,7 +33,7 @@ else:
     weekend_hours = 0
 
 total_pay = (reg_hours * pay) + (late_hours * pay * 1.5) + (over_hours * pay * 2) + (weekend_hours * pay * 2) - breaks * (pay / 60)
-print(f'Total pay: $', {total_pay})
+print(f'Total pay: $ {total_pay}')
 
 if total_pay > threshold:
     print('You are over the tax threshold.')
@@ -46,4 +45,4 @@ else:
     tax_amount = 0
 
 net_pay = total_pay - tax_amount
-print(f'Net pay after tax: $', {net_pay})
+print(f'Net pay after tax: $', net_pay)
